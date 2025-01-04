@@ -5,4 +5,5 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        
+         if str(head) == str(head)[::-1]:
+            return True
