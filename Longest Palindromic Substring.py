@@ -12,3 +12,9 @@ class Solution:
                 start = i - (max_len - 1) // 2
                 end = i + max_len // 2
         return s[start:end + 1]
+    
+    def expandAroundCenter(self, s: str, left: int, right: int) -> int:
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return right - left - 1
