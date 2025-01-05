@@ -1,8 +1,14 @@
 class Solution:
     def isMonotonic(self, nums: List[int]) -> bool:
-        for i in range(len(nums)):
-            for j in nums:
-                if j < (j+1) or j > (j+1):
+        n = len(nums)
+        if n == 1:
+            return True
+        if nums[0] <= nums[-1]:
+            for i in range(1, n):
+                if nums[i] < nums[i-1]:
+                    return False
+        else:
+            for i in range(1, n):
+                if nums[i] > nums[i-1]:
                     return False
         return True
-                    
